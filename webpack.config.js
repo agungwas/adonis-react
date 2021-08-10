@@ -1,6 +1,9 @@
 const { join } = require('path')
 const Encore = require('@symfony/webpack-encore')
 
+// Encore.enableReactPreset()
+Encore.enableTypeScriptLoader()
+
 /*
 |--------------------------------------------------------------------------
 | Encore runtime environment
@@ -45,7 +48,7 @@ Encore.setPublicPath('/assets')
 | entrypoints.
 |
 */
-Encore.addEntry('app', './resources/js/app.js')
+Encore.addEntry('app', './resources/react/index.tsx')
 
 /*
 |--------------------------------------------------------------------------
@@ -162,7 +165,7 @@ Encore.configureDevServerOptions((options) => {
 | favorite CSS precompiler
 |
 */
-// Encore.enableSassLoader()
+Encore.enableSassLoader()
 // Encore.enableLessLoader()
 // Encore.enableStylusLoader()
 

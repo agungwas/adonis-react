@@ -8,6 +8,12 @@
     "build"
   ],
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "outDir": "build",
     "rootDir": "./",
     "sourceMap": true,
