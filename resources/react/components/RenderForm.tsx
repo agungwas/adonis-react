@@ -1,4 +1,6 @@
 import React, { CSSProperties, useState } from "react";
+import request from '@/request';
+
 
 const RenderForm: React.FC<{}> = () => {
   const [name, setName] = useState<string>("");
@@ -15,8 +17,11 @@ const RenderForm: React.FC<{}> = () => {
     setShowDetails(false);
   };
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = async (event: any) => {
     event?.preventDefault();
+    const { status, data } = await request.apiKota.getAll()
+    console.log(status, 'ini status')
+    console.log(data, 'ini data')
     if (name && email) {
       setShowDetails(true);
     }

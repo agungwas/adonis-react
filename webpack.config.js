@@ -1,8 +1,13 @@
-const { join } = require('path')
+const { join, resolve } = require('path')
 const Encore = require('@symfony/webpack-encore')
 
 // Encore.enableReactPreset()
 Encore.enableTypeScriptLoader()
+
+Encore.addAliases({
+  '@': resolve(__dirname, '/resources/react'),
+  "@style": resolve(__dirname, '/resources/react/assets/style')
+})
 
 /*
 |--------------------------------------------------------------------------

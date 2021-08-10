@@ -29,6 +29,12 @@
       ],
       "Database/*": [
         "./database/*"
+      ],
+      "@/*": [
+        "./resources/react/*"
+      ],
+      "@style/*": [
+        "./resources/react/assets/style/*"
       ]
     },
     "types": [
@@ -36,7 +42,8 @@
       "@adonisjs/repl",
       "@adonisjs/session",
       "@adonisjs/view",
-      "@adonisjs/shield"
+      "@adonisjs/shield",
+      "@adonisjs/lucid"
     ]
   }
 }
