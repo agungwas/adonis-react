@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "build": "node ace build --production",
-    "start": "node server.js",
+    "setup": "npm i && node ace migrate:run",
+    "start": "node build/server.js",
     "dev": "node ace serve --watch"
   },
   "devDependencies": {
