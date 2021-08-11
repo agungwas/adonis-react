@@ -8,6 +8,7 @@ export default class TblFoods extends BaseSchema {
       table.increments('id')
 
       table.string('name')
+      table.integer('tbl_kota_id', 4)
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

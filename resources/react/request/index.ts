@@ -5,8 +5,10 @@ export const client = axios.create({
 })
 
 import apiKota from './kota';
+import apiMakanan from './makanan'
 
 export default {
-  apiKota
+  apiKota,
+  apiMakanan
 }
 

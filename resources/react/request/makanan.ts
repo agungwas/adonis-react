@@ -1,6 +1,5 @@
 import { client } from './index';
-// import axios from 'axios'
-const url = 'city/'
+const url = 'food/'
 const result: { status: boolean, data: any } = { status: false, data: {} }
 
 export default {
@@ -16,8 +15,8 @@ export default {
       })
     return Promise.resolve(result)
   },
-  addCity: async (params: string) => {
-    await client.post(url, { name: params })
+  addFood: async (params: { tblKotaId: number, name: string }) => {
+    await client.post(url, params)
       .then(({ data }) => {
         result.data = data,
         result.status = true
@@ -28,8 +27,8 @@ export default {
       })
     return Promise.resolve(result)
   },
-  editCity: async (params = { id: 0, name: '' }) => {
-    await client.patch(url + params.id, { name: params.name })
+  editFood: async (params: { id: number, name: string, tblKotaId: number }) => {
+    await client.patch(url + params.id, { name: params.name, tblKotaId: params.tblKotaId })
       .then(({ data }) => {
         result.data = data
         result.status = true
@@ -40,7 +39,7 @@ export default {
       })
     return Promise.resolve(result)
   },
-  deleteCity: async (params = 0) => {
+  deleteFood: async (params = 0) => {
     await client.delete(url + params)
       .then(({ data }) => {
         result.data = data

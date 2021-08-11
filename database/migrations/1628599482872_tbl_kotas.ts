@@ -8,7 +8,6 @@ export default class TblKotas extends BaseSchema {
       table.increments('id')
 
       table.string('name')
-      table.integer('tbl_foods_id', 2)
       /**
        * Uses timestamptz for PostgreSQL and DATETIME2 for MSSQL
        */

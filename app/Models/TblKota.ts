@@ -1,9 +1,16 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, column, HasMany, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import TblFood from './TblFood'
 
 export default class TblKota extends BaseModel {
   @column({ isPrimary: true })
   public id: number
+
+  @column()
+  public name: string
+  
+  @hasMany(() => TblFood)
+  public foods: HasMany<typeof TblFood>
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
