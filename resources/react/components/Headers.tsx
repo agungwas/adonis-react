@@ -25,12 +25,12 @@ const Headers: React.FC<{}> = () => {
 
         <Container className="d-flex justify-content-end">
           <Nav.Link >
-            <NavLink to="/food" activeClassName="btn btn-danger">
+            <NavLink to="/food" activeClassName="btn btn-outline-primary">
               Makanan
             </NavLink>
           </Nav.Link>
           <Nav.Link >
-            <NavLink to="/city">
+            <NavLink to="/city" activeClassName="btn btn-outline-primary">
               Kota
             </NavLink>
           </Nav.Link>
