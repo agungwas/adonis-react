@@ -43,12 +43,15 @@ const Food: React.FC<{}> = () => {
   }
 
   const submiteditFood = async (e) => {
-
     e.preventDefault()
     setisLoading(true)
+
     if (!editFood.name || !editFood.tblKotaId) return alert('Please enter valid ' + (editFood.name ? 'city' : 'name'))
+
     try {
       const { data, status } = await client.apiMakanan.editFood(editFood)
+      console.log(data, 'data dari submit');
+
       if (status) setfood('')
       else alert(data)
     } finally {
@@ -96,7 +99,7 @@ const Food: React.FC<{}> = () => {
       }
       {editFood.id !== 0 &&
         <form action="" onSubmit={submiteditFood}>
-          <input type="text" name="" value={food} onChange={e => setfood(e.target.value)} id="" />
+          <input type="text" name="" value={editFood.name} onChange={e => seteditFood({ ...editFood, name: e.target.value })} id="" />
           <select name="" id="" value={editFood.tblKotaId} onChange={e => seteditFood({ ...editFood, tblKotaId: parseInt(e.target.value) })}>
             {cities.length && cities.map((el: any) => (
               <option value={el.id} key={el.id}>{el.name}</option>

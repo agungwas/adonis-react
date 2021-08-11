@@ -7,9 +7,12 @@ section {
   &#headers {
     background-color: green;
     height: 10vh;
+    position: relative;
+    z-index: 9999;
   }
 
   &#body {
+    position: relative;
     height: 90vh;
   }
 }
