@@ -15,17 +15,19 @@ const App: React.FC<{}> = () => {
         <section id="headers">
           <Headers />
         </section>
-        <Switch>
-          <Route path="/food" >
-            <Food />
-          </Route>
-          <Route path="/city" >
-            <City />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        <section id="body">
+          <Switch>
+            <Route path="/food" >
+              <Food />
+            </Route>
+            <Route path="/city" >
+              <City />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </section>
       </BrowserRouter>
     </>
   );
